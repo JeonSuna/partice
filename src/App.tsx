@@ -1,6 +1,10 @@
 // import { StaticBtn2 } from "./components/StaticBtn2";
 
-import Button from "./components/Button";
+import { Effect } from "./Effect";
+import { Ref } from "./Ref";
+import { State } from "./State";
+
+// import Button from "./components/Button";
 
 export function App() {
   return (
@@ -11,22 +15,16 @@ export function App() {
       >
         <div className="flex gap-3 flex-wrap">
           {/* 기본 */}
-          <Button size="md">btn1</Button>
-
-          {/* text 색 덮어씀. =>tWMerge*/}
-          <Button variant="grey" size="lg" className="text-red-600 px-10">
-            btn2
-          </Button>
+          {/* <Button size="md">btn1</Button> */}
 
           {/*cva만.. */}
-          <Button variant="red" size="xl">
+          {/* <Button variant="red" size="xl">
             btn3
-          </Button>
+          </Button> */}
 
-          {/* clsx */}
-          <Button disabled size="md">
-            disabled
-          </Button>
+          {/* <State /> */}
+          {/* <Effect /> */}
+          <Ref />
         </div>
       </main>
     </div>
