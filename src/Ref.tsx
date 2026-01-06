@@ -1,27 +1,20 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const Ref = () => {
-  const [count, setCount] = useState(0);
-  const countRef = useRef(0);
+  const inputRef = useRef();
 
-  const handleUp = () => {
-    setCount((pre) => pre + 1);
-  };
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
-  const handleRefUp = () => {
-    countRef.current = countRef.current + 1;
+  const login = () => {
+    alert("ref DOM에 접근하기 성공");
   };
-  console.log("렌더링");
   return (
     <div id="counter">
-      <p>state {count}</p>
-      <p>countRef {countRef.current}</p>
-      <button onClick={handleUp} className="bg-red-300 mb-2">
-        state증가
-      </button>
-      <br></br>
-      <button onClick={handleRefUp} className="bg-red-300 active:bg-gr-600">
-        Ref 증가
+      <input type="text" ref={inputRef} className="border border-active" />
+      <button className="bg-red-300 active:bg-gr-600" onClick={login}>
+        login
       </button>
     </div>
   );
